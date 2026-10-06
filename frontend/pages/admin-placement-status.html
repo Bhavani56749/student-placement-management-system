@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin - Placement Status</title>
+
+    <link rel="stylesheet"
+          href="../css/admin-placement-status.css">
+
+</head>
+
+<body>
+
+
+    <!-- ==========================================
+         SIDEBAR
+         ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <h2>Placement Portal</h2>
+
+            <p>Admin Panel</p>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="admin-students.html">
+                Manage Students
+            </a>
+
+            <a href="admin-companies.html">
+                Manage Companies
+            </a>
+
+            <a href="admin-jobs.html">
+                Manage Jobs
+            </a>
+
+            <a href="admin-applications.html">
+                Manage Applications
+            </a>
+
+            <a href="admin-placement-status.html"
+               class="active">
+                Placement Status
+            </a>
+
+        </nav>
+
+
+        <button id="logoutButton"
+                class="logout-button">
+            Logout
+        </button>
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ======================================
+             PAGE HEADER
+             ====================================== -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>Placement Status</h1>
+
+                <p>
+                    Monitor the placement progress of all students.
+                </p>
+
+            </div>
+
+
+            <button id="backButton"
+                    class="back-button">
+                Back to Dashboard
+            </button>
+
+        </div>
+
+
+
+        <!-- ======================================
+             SUMMARY CARDS
+             ====================================== -->
+
+        <section class="summary-container">
+
+
+            <div class="summary-card">
+
+                <h3>Total Students</h3>
+
+                <p id="totalStudents">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Placed</h3>
+
+                <p id="placedStudents">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>In Process</h3>
+
+                <p id="inProcessStudents">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Not Selected</h3>
+
+                <p id="notSelectedStudents">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>No Applications</h3>
+
+                <p id="noApplicationStudents">
+                    0
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             STATUS TABLE
+             ====================================== -->
+
+        <section class="status-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Student Placement Overview</h2>
+
+                    <p>
+                        View applications and current placement progress.
+                    </p>
+
+                </div>
+
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by student, department or status..."
+                >
+
+            </div>
+
+
+            <p id="statusMessage"
+               class="message">
+            </p>
+
+
+            <div class="table-container">
+
+                <table id="statusTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student ID
+                            </th>
+
+                            <th>
+                                Student Name
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                CGPA
+                            </th>
+
+                            <th>
+                                Total Applications
+                            </th>
+
+                            <th>
+                                Applied
+                            </th>
+
+                            <th>
+                                Shortlisted
+                            </th>
+
+                            <th>
+                                Selected
+                            </th>
+
+                            <th>
+                                Rejected
+                            </th>
+
+                            <th>
+                                Overall Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="statusTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="../js/admin-placement-status.js"></script>
+
+</body>
+
+</html>

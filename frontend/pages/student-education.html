@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Education | Placement Portal</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+        }
+
+        .container {
+            width: 85%;
+            margin: 50px auto;
+        }
+
+        .header {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            margin: 0 0 8px;
+            color: #222;
+        }
+
+        .header p {
+            margin: 0;
+            color: #666;
+        }
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .education-card h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .education-card p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 18px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .back-button:hover {
+            background: #5568d8;
+        }
+
+        #message {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="student-dashboard.html" class="back-button">
+            ← Back to Dashboard
+        </a>
+
+        <div class="header">
+
+            <h1>My Education</h1>
+
+            <p>
+                View your academic qualifications and details.
+            </p>
+
+        </div>
+
+        <div id="educationContainer">
+
+            <div id="message">
+                Loading education details...
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            async function () {
+
+                const studentEmail =
+                    localStorage.getItem("studentEmail");
+
+                if (!studentEmail) {
+
+                    alert("Please login first.");
+
+                    window.location.href =
+                        "login.html";
+
+                    return;
+                }
+
+
+                try {
+
+                    // Get student profile first
+                    const studentResponse =
+                        await fetch(
+                            "http://localhost:8080/student-profile?email="
+                            + encodeURIComponent(studentEmail)
+                        );
+
+
+                    if (!studentResponse.ok) {
+
+                        throw new Error(
+                            "Student profile not found."
+                        );
+
+                    }
+
+
+                    const student =
+                        await studentResponse.json();
+
+
+                    // Get education using student ID
+                    const educationResponse =
+                        await fetch(
+                            "http://localhost:8080/education?studentId="
+                            + student.studentId
+                        );
+
+
+                    if (!educationResponse.ok) {
+
+                        throw new Error(
+                            "Education details could not be loaded."
+                        );
+
+                    }
+
+
+                    const educationList =
+                        await educationResponse.json();
+
+
+                    const container =
+                        document.getElementById(
+                            "educationContainer"
+                        );
+
+
+                    container.innerHTML = "";
+
+
+                    if (
+                        educationList.length === 0
+                    ) {
+
+                        container.innerHTML =
+                            "<div id='message'>No education records found.</div>";
+
+                        return;
+                    }
+
+
+                    educationList.forEach(
+                        function (education) {
+
+                            const card =
+                                document.createElement(
+                                    "div"
+                                );
+
+                            card.className =
+                                "education-card";
+
+
+                            card.innerHTML = `
+
+                                <h2>
+                                    ${education.qualification}
+                                </h2>
+
+                                <p>
+                                    <strong>Institution:</strong>
+                                    ${education.institution}
+                                </p>
+
+                                <p>
+                                    <strong>Specialization:</strong>
+                                    ${education.specialization}
+                                </p>
+
+                                <p>
+                                    <strong>Passing Year:</strong>
+                                    ${education.passingYear}
+                                </p>
+
+                                <p>
+                                    <strong>Percentage:</strong>
+                                    ${education.percentage}%
+                                </p>
+
+                            `;
+
+
+                            container.appendChild(card);
+
+                        }
+                    );
+
+                }
+                catch (error) {
+
+                    console.error(
+                        "Education loading error:",
+                        error
+                    );
+
+
+                    document.getElementById(
+                        "educationContainer"
+                    ).innerHTML =
+
+                        "<div id='message'>" +
+                        "Could not load education details." +
+                        "</div>";
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

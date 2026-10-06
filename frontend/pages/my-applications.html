@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Applications | Placement Portal</title>
+
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f4f7fb;
+
+            color: #1f2937;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .top-header {
+
+            background: #1e3a8a;
+
+            color: white;
+
+            padding: 24px 40px;
+
+            box-shadow:
+                0 3px 10px
+                rgba(0, 0, 0, 0.08);
+        }
+
+
+        .portal-title {
+
+            margin: 0;
+
+            font-size: 25px;
+
+            font-weight: 700;
+        }
+
+
+        .portal-subtitle {
+
+            margin: 6px 0 0;
+
+            font-size: 14px;
+
+            opacity: 0.88;
+        }
+
+
+        /* =========================================
+           MAIN CONTAINER
+        ========================================= */
+
+        .main-container {
+
+            max-width: 1100px;
+
+            margin: 40px auto;
+
+            padding:
+                0 28px;
+        }
+
+
+        /* =========================================
+           PAGE HEADING
+        ========================================= */
+
+        .page-heading {
+
+            margin-bottom: 30px;
+        }
+
+
+        .page-heading h1 {
+
+            margin: 0 0 8px;
+
+            font-size: 30px;
+
+            color: #111827;
+        }
+
+
+        .page-heading p {
+
+            margin: 0;
+
+            color: #6b7280;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           APPLICATION GRID
+        ========================================= */
+
+        .applications-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(320px, 1fr)
+                );
+
+            gap: 24px;
+
+            width: 100%;
+        }
+
+
+        /* =========================================
+           APPLICATION CARD
+        ========================================= */
+
+        .application-card {
+
+            background: white;
+
+            border-radius: 16px;
+
+            border: 1px solid #dbe3ef;
+
+            box-shadow:
+                0 5px 18px
+                rgba(15, 23, 42, 0.07);
+
+            width: 100%;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .application-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 12px 28px
+                rgba(15, 23, 42, 0.12);
+        }
+
+
+        /* =========================================
+           CARD TOP SECTION
+        ========================================= */
+
+        .job-header {
+
+            padding:
+                26px 28px 22px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+
+            gap: 14px;
+
+            width: 100%;
+        }
+
+
+        /* =========================================
+           JOB TITLE
+        ========================================= */
+
+        .job-title {
+
+            margin: 0;
+
+            padding: 0;
+
+            width: 100%;
+
+            font-size: 21px;
+
+            line-height: 1.4;
+
+            color: #1e3a8a;
+
+            font-weight: 700;
+
+            overflow-wrap: break-word;
+        }
+
+
+        /* =========================================
+           COMPANY
+        ========================================= */
+
+        .company-name {
+
+            margin: 7px 0 0;
+
+            padding: 0;
+
+            color: #64748b;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           STATUS BADGE
+        ========================================= */
+
+        .status-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: fit-content;
+
+            padding:
+                7px 15px;
+
+            margin: 0;
+
+            border-radius: 999px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            line-height: 1;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           APPLIED
+        ========================================= */
+
+        .status-applied {
+
+            background: #fef3c7;
+
+            color: #92400e;
+
+            border:
+                1px solid #fde68a;
+        }
+
+
+        /* =========================================
+           SHORTLISTED
+        ========================================= */
+
+        .status-shortlisted {
+
+            background: #dbeafe;
+
+            color: #1d4ed8;
+
+            border:
+                1px solid #bfdbfe;
+        }
+
+
+        /* =========================================
+           REJECTED
+        ========================================= */
+
+        .status-rejected {
+
+            background: #fee2e2;
+
+            color: #b91c1c;
+
+            border:
+                1px solid #fecaca;
+        }
+
+
+        /* =========================================
+           SELECTED
+        ========================================= */
+
+        .status-selected {
+
+            background: #dcfce7;
+
+            color: #15803d;
+
+            border:
+                1px solid #bbf7d0;
+        }
+
+
+        /* =========================================
+           DEFAULT STATUS
+        ========================================= */
+
+        .status-default {
+
+            background: #e5e7eb;
+
+            color: #374151;
+
+            border:
+                1px solid #d1d5db;
+        }
+
+
+        /* =========================================
+           DETAILS SECTION
+        ========================================= */
+
+        .details {
+
+            border-top:
+                1px solid #e5e7eb;
+
+            padding:
+                21px 28px 25px;
+
+            width: 100%;
+        }
+
+
+        /* =========================================
+           DETAIL ROW
+        ========================================= */
+
+        .detail-row {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                flex-start;
+
+            gap: 20px;
+
+            padding:
+                8px 0;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        .detail-label {
+
+            color: #6b7280;
+
+            flex-shrink: 0;
+        }
+
+
+        .detail-value {
+
+            color: #111827;
+
+            font-weight: 600;
+
+            text-align: right;
+
+            overflow-wrap: anywhere;
+        }
+
+
+        /* =========================================
+           REMARKS
+        ========================================= */
+
+        .remarks {
+
+            margin-top: 16px;
+
+            padding: 14px 16px;
+
+            background: #f8fafc;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            color: #374151;
+        }
+
+
+        .remarks strong {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: #111827;
+        }
+
+
+        /* =========================================
+           LOADING / EMPTY MESSAGE
+        ========================================= */
+
+        .message {
+
+            grid-column:
+                1 / -1;
+
+            background: white;
+
+            padding: 40px;
+
+            text-align: center;
+
+            border-radius: 14px;
+
+            color: #6b7280;
+
+            border:
+                1px solid #e5e7eb;
+
+            box-shadow:
+                0 4px 12px
+                rgba(0, 0, 0, 0.05);
+        }
+
+
+        /* =========================================
+           BACK BUTTON
+        ========================================= */
+
+        .back-section {
+
+            margin-top: 38px;
+
+            text-align: center;
+        }
+
+
+        #backButton {
+
+            border: none;
+
+            background: #1e3a8a;
+
+            color: white;
+
+            padding:
+                13px 26px;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        #backButton:hover {
+
+            background: #172554;
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 750px) {
+
+            .main-container {
+
+                padding:
+                    0 20px;
+
+                margin-top: 30px;
+            }
+
+
+            .applications-grid {
+
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .top-header {
+
+                padding:
+                    20px;
+            }
+
+
+            .portal-title {
+
+                font-size: 21px;
+            }
+
+
+            .main-container {
+
+                margin-top: 25px;
+
+                padding:
+                    0 15px;
+            }
+
+
+            .page-heading h1 {
+
+                font-size: 26px;
+            }
+
+
+            .job-header {
+
+                padding:
+                    22px 22px 20px;
+            }
+
+
+            .details {
+
+                padding:
+                    18px 22px 22px;
+            }
+
+
+            .detail-row {
+
+                flex-direction: column;
+
+                gap: 3px;
+            }
+
+
+            .detail-value {
+
+                text-align: left;
+            }
+
+
+            .application-card {
+
+                border-radius: 13px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+
+    <header class="top-header">
+
+        <h2 class="portal-title">
+            Student Placement Portal
+        </h2>
+
+        <p class="portal-subtitle">
+            Track your job applications
+        </p>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================= -->
+
+    <main class="main-container">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="page-heading">
+
+            <h1>
+                My Applications
+            </h1>
+
+            <p>
+                View and track the status of jobs
+                you have applied for.
+            </p>
+
+        </div>
+
+
+        <!-- APPLICATION CARDS -->
+
+        <div
+            id="applicationsContainer"
+            class="applications-grid">
+
+            <div class="message">
+
+                Loading applications...
+
+            </div>
+
+        </div>
+
+
+        <!-- BACK BUTTON -->
+
+        <div class="back-section">
+
+            <button id="backButton">
+
+                ← Back to Dashboard
+
+            </button>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script src="../js/my-applications.js"></script>
+
+
+</body>
+
+</html>

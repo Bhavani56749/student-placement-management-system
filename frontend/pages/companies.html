@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Companies</title>
+
+    <link rel="stylesheet"
+          href="../css/companies.css">
+
+</head>
+
+<body>
+
+    <!-- ==============================
+         SIDEBAR
+    =============================== -->
+
+    <div class="sidebar">
+
+        <h2>Placement Portal</h2>
+
+        <p class="student-name">
+            Student Dashboard
+        </p>
+
+        <ul>
+
+            <li>
+                <a href="student-dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="student-profile.html">
+                    My Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="student-education.html">
+                    Education
+                </a>
+            </li>
+
+            <li>
+                <a href="student-skills.html">
+                    My Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="available-jobs.html">
+                    Available Jobs
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="companies.html">
+                    Companies
+                </a>
+            </li>
+
+            <li>
+                <a href="my-applications.html">
+                    My Applications
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Placement Status
+                </a>
+            </li>
+
+        </ul>
+
+        <button id="logoutButton">
+            Logout
+        </button>
+
+    </div>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <div class="main-content">
+
+        <!-- TOP BAR -->
+
+        <div class="top-bar">
+
+            <div>
+
+                <h1>Companies</h1>
+
+                <p>
+                    Explore companies participating
+                    in the placement process.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             SEARCH SECTION
+        =============================== -->
+
+        <div class="search-section">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search companies..."
+            >
+
+        </div>
+
+
+        <!-- ==============================
+             COMPANIES
+        =============================== -->
+
+        <div
+            id="companiesContainer"
+            class="companies-container">
+
+            <div class="message">
+                Loading companies...
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             BACK BUTTON
+        =============================== -->
+
+        <button
+            id="backButton"
+            class="back-button">
+
+            ← Back to Dashboard
+
+        </button>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/companies.js"></script>
+
+</body>
+
+</html>

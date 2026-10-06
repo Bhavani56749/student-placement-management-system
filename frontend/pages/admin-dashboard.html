@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="../css/admin-dashboard.css">
+
+</head>
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================= -->
+
+    <div class="sidebar">
+
+        <h2>Placement Portal</h2>
+
+        <p class="admin-name">
+            Admin Dashboard
+        </p>
+
+
+        <ul>
+
+            <li class="active">
+                <a href="admin-dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-students.html">
+                    Students
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-companies.html">
+                    Companies
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-jobs.html">
+                    Jobs
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-applications.html">
+                    Applications
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-placement-status.html">
+                    Placement Status
+                </a>
+            </li>
+
+        </ul>
+
+
+        <button id="logoutButton">
+            Logout
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================= -->
+
+    <div class="main-content">
+
+
+        <!-- =====================================
+             TOP BAR
+        ====================================== -->
+
+        <div class="top-bar">
+
+            <div>
+
+                <h1>
+                    Admin Dashboard
+                </h1>
+
+                <p>
+                    Manage students, companies,
+                    jobs and placement applications.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             SUMMARY CARDS
+        ====================================== -->
+
+        <div class="summary-cards">
+
+
+            <div class="summary-card">
+
+                <div class="card-title">
+                    Total Students
+                </div>
+
+                <div
+                    id="studentCount"
+                    class="card-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="card-title">
+                    Total Companies
+                </div>
+
+                <div
+                    id="companyCount"
+                    class="card-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="card-title">
+                    Total Jobs
+                </div>
+
+                <div
+                    id="jobCount"
+                    class="card-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="card-title">
+                    Applications
+                </div>
+
+                <div
+                    id="applicationCount"
+                    class="card-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             MANAGEMENT SECTION
+        ====================================== -->
+
+        <div class="section-title">
+
+            <h2>
+                Management
+            </h2>
+
+            <p>
+                Select a section to manage placement data.
+            </p>
+
+        </div>
+
+
+
+        <div class="management-grid">
+
+
+            <!-- STUDENTS -->
+
+            <div class="management-card">
+
+                <div class="management-icon">
+                    👨‍🎓
+                </div>
+
+                <h3>
+                    Students
+                </h3>
+
+                <p>
+                    View and manage registered
+                    student information.
+                </p>
+
+                <button
+                    onclick="window.location.href='admin-students.html'">
+
+                    Manage Students
+
+                </button>
+
+            </div>
+
+
+
+            <!-- COMPANIES -->
+
+            <div class="management-card">
+
+                <div class="management-icon">
+                    🏢
+                </div>
+
+                <h3>
+                    Companies
+                </h3>
+
+                <p>
+                    Add, update and manage
+                    participating companies.
+                </p>
+
+                <button
+                    onclick="window.location.href='admin-companies.html'">
+
+                    Manage Companies
+
+                </button>
+
+            </div>
+
+
+
+            <!-- JOBS -->
+
+            <div class="management-card">
+
+                <div class="management-icon">
+                    💼
+                </div>
+
+                <h3>
+                    Jobs
+                </h3>
+
+                <p>
+                    Create and manage job
+                    opportunities and eligibility.
+                </p>
+
+                <button
+                    onclick="window.location.href='admin-jobs.html'">
+
+                    Manage Jobs
+
+                </button>
+
+            </div>
+
+
+
+            <!-- APPLICATIONS -->
+
+            <div class="management-card">
+
+                <div class="management-icon">
+                    📄
+                </div>
+
+                <h3>
+                    Applications
+                </h3>
+
+                <p>
+                    Review student applications
+                    and update their status.
+                </p>
+
+                <button
+                    onclick="window.location.href='admin-applications.html'">
+
+                    Manage Applications
+
+                </button>
+
+            </div>
+
+
+
+            <!-- PLACEMENT STATUS -->
+
+            <div class="management-card">
+
+                <div class="management-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Placement Status
+                </h3>
+
+                <p>
+                    Monitor shortlisted, selected
+                    and rejected students.
+                </p>
+
+                <button
+                    onclick="window.location.href='admin-placement-status.html'">
+
+                    View Placement Status
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="../js/admin-dashboard.js"></script>
+
+</body>
+
+</html>

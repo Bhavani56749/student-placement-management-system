@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Students</title>
+
+    <link rel="stylesheet"
+          href="../css/admin-students.css">
+
+</head>
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================= -->
+
+    <div class="sidebar">
+
+        <h2>Placement Portal</h2>
+
+        <p class="admin-name">
+            Admin Dashboard
+        </p>
+
+
+        <ul>
+
+            <li>
+                <a href="admin-dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+
+            <li class="active">
+                <a href="admin-students.html">
+                    Students
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-companies.html">
+                    Companies
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-jobs.html">
+                    Jobs
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-applications.html">
+                    Applications
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-placement-status.html">
+                    Placement Status
+                </a>
+            </li>
+
+        </ul>
+
+
+        <button id="logoutButton">
+            Logout
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================= -->
+
+    <div class="main-content">
+
+
+        <!-- =====================================
+             TOP BAR
+        ====================================== -->
+
+        <div class="top-bar">
+
+            <div>
+
+                <h1>
+                    Manage Students
+                </h1>
+
+                <p>
+                    View registered students and
+                    their academic information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             SEARCH
+        ====================================== -->
+
+        <div class="search-section">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search students..."
+            >
+
+        </div>
+
+
+
+        <!-- =====================================
+             STUDENT COUNT
+        ====================================== -->
+
+        <div class="student-summary">
+
+            <div>
+
+                <span class="summary-label">
+                    Total Students
+                </span>
+
+                <span
+                    id="totalStudents"
+                    class="summary-number">
+
+                    0
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             STUDENTS TABLE
+        ====================================== -->
+
+        <div class="table-card">
+
+            <div
+                id="studentsMessage"
+                class="message">
+
+                Loading students...
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table
+                    id="studentsTable"
+                    class="students-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student ID
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Email
+                            </th>
+
+                            <th>
+                                Phone
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                Graduation Year
+                            </th>
+
+                            <th>
+                                CGPA
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="studentsTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             BACK BUTTON
+        ====================================== -->
+
+        <button
+            id="backButton"
+            class="back-button">
+
+            ← Back to Dashboard
+
+        </button>
+
+    </div>
+
+
+
+    <script src="../js/admin-students.js"></script>
+
+</body>
+
+</html>

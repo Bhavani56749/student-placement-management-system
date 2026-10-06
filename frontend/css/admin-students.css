@@ -1,0 +1,396 @@
+/* =========================================
+   GENERAL PAGE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: #1e293b;
+    color: white;
+
+    padding: 25px 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.admin-name {
+    text-align: center;
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   SIDEBAR MENU
+========================================= */
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 8px;
+}
+
+.sidebar ul li a {
+    display: block;
+
+    text-decoration: none;
+    color: #e2e8f0;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #334155;
+    color: white;
+}
+
+.sidebar ul li.active a {
+    background: #2563eb;
+    color: white;
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+#logoutButton {
+    margin-top: auto;
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #dc2626;
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#logoutButton:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    padding: 35px 40px;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.top-bar {
+    margin-bottom: 30px;
+}
+
+.top-bar h1 {
+    font-size: 32px;
+
+    color: #111827;
+
+    margin-bottom: 8px;
+}
+
+.top-bar p {
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   SEARCH SECTION
+========================================= */
+
+.search-section {
+    margin-bottom: 25px;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 550px;
+
+    padding: 14px 18px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    background: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================================
+   STUDENT SUMMARY
+========================================= */
+
+.student-summary {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 20px 24px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.summary-label {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 6px;
+}
+
+.summary-number {
+    display: block;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #111827;
+}
+
+
+/* =========================================
+   TABLE CARD
+========================================= */
+
+.table-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.06);
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TABLE WRAPPER
+========================================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   STUDENTS TABLE
+========================================= */
+
+.students-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 950px;
+}
+
+.students-table thead {
+    background: #eff6ff;
+}
+
+.students-table th {
+    padding: 16px 18px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    color: #1e3a8a;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid #dbeafe;
+
+    white-space: nowrap;
+}
+
+.students-table td {
+    padding: 16px 18px;
+
+    font-size: 14px;
+
+    color: #334155;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    white-space: nowrap;
+}
+
+.students-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.students-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   CGPA
+========================================= */
+
+.students-table td:last-child {
+    font-weight: 600;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+    padding: 30px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-button {
+    margin-top: 30px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+    }
+
+    #logoutButton {
+        margin-top: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+
+        padding: 25px 20px;
+    }
+
+    .top-bar h1 {
+        font-size: 27px;
+    }
+
+}

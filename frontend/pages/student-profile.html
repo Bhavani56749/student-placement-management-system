@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .profile-row {
+            display: flex;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .label {
+            width: 200px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .value {
+            color: #333;
+        }
+
+        .back-button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background: #5568d8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-container">
+
+        <h1>My Profile</h1>
+
+        <div class="profile-row">
+            <div class="label">Full Name</div>
+            <div class="value" id="fullName">Loading...</div>
+        </div>
+
+        <div class="profile-row">
+            <div class="label">Email</div>
+            <div class="value" id="email">Loading...</div>
+        </div>
+
+        <div class="profile-row">
+            <div class="label">Phone</div>
+            <div class="value" id="phone">Loading...</div>
+        </div>
+
+        <div class="profile-row">
+            <div class="label">Department</div>
+            <div class="value" id="department">Loading...</div>
+        </div>
+
+        <div class="profile-row">
+            <div class="label">Graduation Year</div>
+            <div class="value" id="graduationYear">Loading...</div>
+        </div>
+
+        <div class="profile-row">
+            <div class="label">CGPA</div>
+            <div class="value" id="cgpa">Loading...</div>
+        </div>
+
+        <div class="profile-row">
+            <div class="label">Address</div>
+            <div class="value" id="address">Loading...</div>
+        </div>
+
+        <button class="back-button"
+                onclick="window.location.href='student-dashboard.html'">
+            Back to Dashboard
+        </button>
+
+    </div>
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", async function () {
+
+            const studentEmail =
+                localStorage.getItem("studentEmail");
+
+            if (!studentEmail) {
+
+                alert("Please login first.");
+
+                window.location.href = "login.html";
+
+                return;
+            }
+
+            try {
+
+                const response = await fetch(
+                    "http://localhost:8080/student-profile?email="
+                    + encodeURIComponent(studentEmail)
+                );
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Student profile not found."
+                    );
+
+                }
+
+                const student =
+                    await response.json();
+
+                document.getElementById("fullName").textContent =
+                    student.fullName;
+
+                document.getElementById("email").textContent =
+                    student.email;
+
+                document.getElementById("phone").textContent =
+                    student.phone;
+
+                document.getElementById("department").textContent =
+                    student.department;
+
+                document.getElementById("graduationYear").textContent =
+                    student.graduationYear;
+
+                document.getElementById("cgpa").textContent =
+                    student.cgpa;
+
+                document.getElementById("address").textContent =
+                    student.address;
+
+            }
+            catch (error) {
+
+                console.error(error);
+
+                alert(
+                    "Could not load student profile."
+                );
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

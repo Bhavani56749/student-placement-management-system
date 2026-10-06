@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Placement Status</title>
+
+    <link rel="stylesheet"
+          href="../css/placement-status.css">
+
+</head>
+
+<body>
+
+    <!-- ==============================
+         SIDEBAR
+    =============================== -->
+
+    <div class="sidebar">
+
+        <h2>Placement Portal</h2>
+
+        <p class="student-name">
+            Student Dashboard
+        </p>
+
+        <ul>
+
+            <li>
+                <a href="student-dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="student-profile.html">
+                    My Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="student-education.html">
+                    Education
+                </a>
+            </li>
+
+            <li>
+                <a href="student-skills.html">
+                    My Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="available-jobs.html">
+                    Available Jobs
+                </a>
+            </li>
+
+            <li>
+                <a href="companies.html">
+                    Companies
+                </a>
+            </li>
+
+            <li>
+                <a href="my-applications.html">
+                    My Applications
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="placement-status.html">
+                    Placement Status
+                </a>
+            </li>
+
+        </ul>
+
+        <button id="logoutButton">
+            Logout
+        </button>
+
+    </div>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <div class="main-content">
+
+        <!-- TOP BAR -->
+
+        <div class="top-bar">
+
+            <div>
+
+                <h1>Placement Status</h1>
+
+                <p>
+                    Track your overall placement progress
+                    and application outcomes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             OVERALL STATUS CARD
+        =============================== -->
+
+        <div
+            id="overallStatusCard"
+            class="overall-status-card">
+
+            <div class="status-content">
+
+                <h2>
+                    Overall Placement Status
+                </h2>
+
+                <div
+                    id="overallStatus"
+                    class="overall-status">
+
+                    Loading...
+
+                </div>
+
+                <p id="statusDescription">
+                    Checking your application status...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             SUMMARY CARDS
+        =============================== -->
+
+        <div class="summary-cards">
+
+            <div class="summary-card">
+
+                <h3>
+                    Total Applications
+                </h3>
+
+                <div
+                    id="totalApplications"
+                    class="summary-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>
+                    Applied
+                </h3>
+
+                <div
+                    id="appliedCount"
+                    class="summary-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>
+                    Shortlisted
+                </h3>
+
+                <div
+                    id="shortlistedCount"
+                    class="summary-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>
+                    Selected
+                </h3>
+
+                <div
+                    id="selectedCount"
+                    class="summary-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>
+                    Rejected
+                </h3>
+
+                <div
+                    id="rejectedCount"
+                    class="summary-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             PLACEMENT DETAILS
+        =============================== -->
+
+        <div class="section-title">
+
+            <h2>
+                Application Outcomes
+            </h2>
+
+            <p>
+                Details of your placement applications.
+            </p>
+
+        </div>
+
+
+        <div
+            id="placementContainer"
+            class="placement-container">
+
+            <div class="message">
+                Loading placement status...
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             BACK BUTTON
+        =============================== -->
+
+        <button
+            id="backButton"
+            class="back-button">
+
+            ← Back to Dashboard
+
+        </button>
+
+    </div>
+
+
+    <script src="../js/placement-status.js"></script>
+
+</body>
+
+</html>

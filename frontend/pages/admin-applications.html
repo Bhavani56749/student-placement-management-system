@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin - Manage Applications</title>
+
+    <link rel="stylesheet"
+          href="../css/admin-applications.css">
+
+</head>
+
+<body>
+
+
+    <!-- ==========================================
+         SIDEBAR
+         ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <h2>Placement Portal</h2>
+            <p>Admin Panel</p>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="admin-students.html">
+                Manage Students
+            </a>
+
+            <a href="admin-companies.html">
+                Manage Companies
+            </a>
+
+            <a href="admin-jobs.html">
+                Manage Jobs
+            </a>
+
+            <a href="admin-applications.html"
+               class="active">
+                Manage Applications
+            </a>
+
+            <a href="admin-placement-status.html">
+                Placement Status
+            </a>
+
+        </nav>
+
+
+        <button id="logoutButton"
+                class="logout-button">
+            Logout
+        </button>
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+
+    <main class="main-content">
+
+
+        <div class="page-header">
+
+            <div>
+                <h1>Manage Applications</h1>
+
+                <p>
+                    View and manage student job applications
+                </p>
+            </div>
+
+            <button id="backButton"
+                    class="back-button">
+                Back to Dashboard
+            </button>
+
+        </div>
+
+
+
+        <!-- ==========================================
+             SUMMARY CARDS
+             ========================================== -->
+
+        <section class="summary-container">
+
+            <div class="summary-card">
+
+                <h3>Total Applications</h3>
+
+                <p id="totalApplications">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Applied</h3>
+
+                <p id="appliedCount">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Shortlisted</h3>
+
+                <p id="shortlistedCount">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Selected</h3>
+
+                <p id="selectedCount">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Rejected</h3>
+
+                <p id="rejectedCount">
+                    0
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             SEARCH
+             ========================================== -->
+
+        <section class="applications-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>All Applications</h2>
+
+                    <p>
+                        Search and update application status
+                    </p>
+
+                </div>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by student, job, company or status..."
+                >
+
+            </div>
+
+
+            <p id="applicationsMessage"
+               class="message">
+            </p>
+
+
+
+            <!-- ======================================
+                 APPLICATIONS TABLE
+                 ====================================== -->
+
+            <div class="table-container">
+
+                <table id="applicationsTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Application ID
+                            </th>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Job
+                            </th>
+
+                            <th>
+                                Company
+                            </th>
+
+                            <th>
+                                Applied Date
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Remarks
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="applicationsTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="../js/admin-applications.js"></script>
+
+</body>
+
+</html>
